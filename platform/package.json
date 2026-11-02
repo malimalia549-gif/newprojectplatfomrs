@@ -1,0 +1,51 @@
+{
+  "name": "elysium-unified-platform",
+  "private": true,
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "dev:next": "next dev --hostname 0.0.0.0",
+    "build": "node scripts/build.mjs",
+    "start": "next start --hostname 0.0.0.0",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "tsx --conditions=react-server scripts/migrate.ts",
+    "test": "tsx --test tests/unit.test.ts",
+    "test:api": "node --test tests/api.test.mjs",
+    "test:e2e": "playwright test",
+    "check": "npm run typecheck && npm run lint && npm run test && npm run build",
+    "test:ledger": "tsx --conditions=react-server --test tests/ledger.test.ts",
+    "dev:clean": "node -e \"require('node:fs').rmSync('.next', { recursive: true, force: true })\" && npm run dev",
+    "start:local": "node scripts/start-local.mjs",
+    "preview": "npm run build && npm run start:local"
+  },
+  "dependencies": {
+    "@fontsource-variable/inter": "^5.2.8",
+    "@fontsource-variable/manrope": "^5.2.8",
+    "chart.js": "^4.6.1",
+    "dotenv": "17.3.1",
+    "drizzle-orm": "0.45.2",
+    "lucide-react": "^1.66.0",
+    "next": "16.4.3",
+    "pg": "8.20.0",
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
+    "server-only": "^0.0.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.1",
+    "@tailwindcss/postcss": "4.1.17",
+    "@types/node": "22.19.15",
+    "@types/pg": "8.18.0",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "drizzle-kit": "0.31.10",
+    "embedded-postgres": "17.6.0-beta.15",
+    "eslint": "9.39.4",
+    "eslint-config-next": "16.4.3",
+    "postcss": "8.5.32",
+    "tailwindcss": "4.1.17",
+    "tsx": "^4.23.15",
+    "typescript": "5.9.3"
+  }
+}

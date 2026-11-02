@@ -1,0 +1,32 @@
+{
+  "verifiedAt": "2026-11-02T17:59:42.899534+00:00",
+  "node": "22.22.3",
+  "npm": "10.9.8",
+  "next": "16.4.3",
+  "database": "PostgreSQL 17 (embedded, sandbox)",
+  "commands": {
+    "npm run check": "pass: typecheck, lint, 23 unit, production build",
+    "npm run test:api": "6/6 pass",
+    "npm run test:ledger": "5/5 pass, rolled back",
+    "npm run test:e2e": "16/16 pass: includes UBTC image decode fallback from HTTP-200 HTML and switch reset; official CDN fixtures",
+    "npm audit": "0 vulnerabilities (full and --omit=dev)",
+    "npm audit --omit=dev": "0 vulnerabilities",
+    "production server smoke": "Current production preview :3000, browser suite passed"
+  },
+  "limitations": [
+    "Sandbox balances/orders only; Hyperliquid mainnet market data and official asset icons are read-only",
+    "Sandbox/CI has no outbound access to api.hyperliquid.xyz or app.hyperliquid.xyz; browser tests mock both official endpoints",
+    "No independent security audit, load test, or disaster recovery test",
+    "API tests create disposable local data; ledger tests roll back",
+    "Hyperliquid paper ledger is browser-local and separate from Launchpad PostgreSQL balances/Portfolio",
+    "Paper fills use mark price, no fees/slippage/funding/automatic liquidation/limit/stop",
+    "Two workstation renderers remain; shared-shell and unified-ledger refactor not complete"
+  ],
+  "revision": "Spot logo candidate resolver, token identity metadata, guarded Unit naming fallback, actual resolved URL diagnostics",
+  "notes": [
+    "50 tests: 23 unit + 6 API + 5 ledger + 16 browser",
+    "No hardcoded per-token alias table and no third-party artwork endpoints at runtime",
+    "Unit mapping documented by issuer; suffix conventions researched from independent integrations, not official app source code",
+    "Live user-browser CDN availability still unverified; sandbox direct CDN blocked"
+  ]
+}

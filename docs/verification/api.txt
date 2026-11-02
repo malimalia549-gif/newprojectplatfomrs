@@ -1,0 +1,54 @@
+
+> test:api
+> npm run test:api --workspace=elysium-unified-platform
+
+
+> test:api
+> node --test tests/api.test.mjs
+
+TAP version 13
+# Subtest: HTTP health, read-only markets, auth, CSRF and input validation
+ok 1 - HTTP health, read-only markets, auth, CSRF and input validation
+  ---
+  duration_ms: 409.654081
+  type: 'test'
+  ...
+# Subtest: idempotency: simultaneous retries credit a payment exactly once and bind key to payload
+ok 2 - idempotency: simultaneous retries credit a payment exactly once and bind key to payload
+  ---
+  duration_ms: 287.949036
+  type: 'test'
+  ...
+# Subtest: curve: capped buy, fractional sell, immutable receipts, lifecycle ownership and cashtag settlement
+ok 3 - curve: capped buy, fractional sell, immutable receipts, lifecycle ownership and cashtag settlement
+  ---
+  duration_ms: 400.441228
+  type: 'test'
+  ...
+# Subtest: swaps: actual balances, overspend rollback, token round trip and stale quote rejection
+ok 4 - swaps: actual balances, overspend rollback, token round trip and stale quote rejection
+  ---
+  duration_ms: 216.297939
+  type: 'test'
+  ...
+# Subtest: perps: margin reservation, ownership, cancellation refund, close and no double close
+ok 5 - perps: margin reservation, ownership, cancellation refund, close and no double close
+  ---
+  duration_ms: 329.514454
+  type: 'test'
+  ...
+# Subtest: staking and claims: lock enforcement, owner isolation, single claim, notification isolation
+ok 6 - staking and claims: lock enforcement, owner isolation, single claim, notification isolation
+  ---
+  duration_ms: 334.93393
+  type: 'test'
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 6
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2044.568029

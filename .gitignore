@@ -28,3 +28,14 @@ pnpm-debug.log*
 # System Files
 .DS_Store
 Thumbs.db
+
+# Local database / generated QA
+.local/
+*.tsbuildinfo
+playwright-report/
+test-results/
+.env.*
+!.env.example
+
+# Next.js generated route declarations
+next-env.d.ts

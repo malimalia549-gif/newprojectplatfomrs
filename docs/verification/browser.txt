@@ -1,0 +1,29 @@
+
+> test:e2e
+> npm run test:e2e --workspace=elysium-unified-platform
+
+
+> test:e2e
+> playwright test
+
+
+Running 16 tests using 1 worker
+
+  ✓   1 tests/browser/platform.spec.ts:4:5 › home renders database-backed launches and a local hero asset (768ms)
+  ✓   2 tests/browser/platform.spec.ts:15:5 › Trade combines candlestick, watchlist, TP/SL and demo perpetual order (2.8s)
+  ✓   3 tests/browser/platform.spec.ts:46:5 › Docs navigation has no Pro tab and HTML is not cacheable (592ms)
+  ✓   4 tests/browser/platform.spec.ts:58:5 › old Pro and terminal addresses redirect to the single Trade page (1.1s)
+  ✓   5 tests/browser/platform.spec.ts:68:5 › economics calculator recalculates from disclosed assumptions (561ms)
+  ✓   6 tests/browser/platform.spec.ts:77:5 › swap workstation quotes and executes a sandbox coin swap (7.2s)
+  ✓   7 tests/browser/platform.spec.ts:87:5 › mobile navigation and unified Trade layout have no horizontal page overflow (1.3s)
+  ✓   8 tests/browser/platform.spec.ts:99:5 › Trade uses market-source tabs and live-price paper orders without exchange mutations (1.7s)
+  ✓   9 tests/browser/platform.spec.ts:129:5 › Trade live feed shows an honest outage instead of falling back to fake prices (884ms)
+  ✓  10 tests/browser/platform.spec.ts:141:5 › Trade uses official Hyperliquid asset icons and never substitutes an aggregator logo (1.0s)
+  ✓  11 tests/browser/platform.spec.ts:161:5 › Trade falls back to a monogram when the official Hyperliquid icon is missing (1.0s)
+  ✓  12 tests/browser/platform.spec.ts:172:5 › shared shell hydrates cleanly and exposes one build id across pages (1.2s)
+  ✓  13 tests/browser/platform.spec.ts:191:5 › Hyperliquid paper orders reserve local balance, survive reload and close without sending exchange actions (1.6s)
+  ✓  14 tests/browser/platform.spec.ts:211:5 › native perpetuals survive a failed HIP-3 context feed (795ms)
+  ✓  15 tests/browser/platform.spec.ts:219:5 › a candle endpoint failure exposes the asset and HTTP error instead of a silent blank (910ms)
+  ✓  16 tests/browser/platform.spec.ts:228:5 › UBTC resolves official artwork through spot candidates and metadata, not a hardcoded BTC substitution (1.4s)
+
+  16 passed (25.8s)

@@ -1,0 +1,216 @@
+
+> check
+> npm run check --workspace=elysium-unified-platform
+
+
+> check
+> npm run typecheck && npm run lint && npm run test && npm run build
+
+
+> typecheck
+> tsc --noEmit
+
+
+> lint
+> eslint .
+
+
+> test
+> tsx --test tests/unit.test.ts
+
+TAP version 13
+# Subtest: curve: full absorption charges only the capacity, not the oversized input
+ok 1 - curve: full absorption charges only the capacity, not the oversized input
+  ---
+  duration_ms: 1.231445
+  type: 'test'
+  ...
+# Subtest: curve: buy/sell preserve reserve accounting and fee split
+ok 2 - curve: buy/sell preserve reserve accounting and fee split
+  ---
+  duration_ms: 0.33288
+  type: 'test'
+  ...
+# Subtest: curve: fractional and oversized sells cannot create reserves
+ok 3 - curve: fractional and oversized sells cannot create reserves
+  ---
+  duration_ms: 0.349353
+  type: 'test'
+  ...
+# Subtest: curve: graduation uses net reserves and the 200M book allocation
+ok 4 - curve: graduation uses net reserves and the 200M book allocation
+  ---
+  duration_ms: 0.208676
+  type: 'test'
+  ...
+# Subtest: perps: long/short PnL signs and liquidation sides
+ok 5 - perps: long/short PnL signs and liquidation sides
+  ---
+  duration_ms: 0.215565
+  type: 'test'
+  ...
+# Subtest: perps: deterministic bounded marks and crossed-book prevention
+ok 6 - perps: deterministic bounded marks and crossed-book prevention
+  ---
+  duration_ms: 0.552427
+  type: 'test'
+  ...
+# Subtest: auth: salted scrypt, wrong password, malformed hash and hashed sessions
+ok 7 - auth: salted scrypt, wrong password, malformed hash and hashed sessions
+  ---
+  duration_ms: 367.063513
+  type: 'test'
+  ...
+# Subtest: payments: handle validation and decimal currency rounding
+ok 8 - payments: handle validation and decimal currency rounding
+  ---
+  duration_ms: 0.4763
+  type: 'test'
+  ...
+# Subtest: tokenomics: bounded APY and ordered eligibility tiers
+ok 9 - tokenomics: bounded APY and ordered eligibility tiers
+  ---
+  duration_ms: 0.445489
+  type: 'test'
+  ...
+# Subtest: chart: sandbox marks aggregate into honest display candles
+ok 10 - chart: sandbox marks aggregate into honest display candles
+  ---
+  duration_ms: 1.120986
+  type: 'test'
+  ...
+# Subtest: hyperliquid: perp contexts normalize funding/OI/24h and skip delisted or invalid rows
+ok 11 - hyperliquid: perp contexts normalize funding/OI/24h and skip delisted or invalid rows
+  ---
+  duration_ms: 0.567538
+  type: 'test'
+  ...
+# Subtest: hyperliquid: spot pairs resolve token indices and canonical names
+ok 12 - hyperliquid: spot pairs resolve token indices and canonical names
+  ---
+  duration_ms: 0.430151
+  type: 'test'
+  ...
+# Subtest: hyperliquid: orderbook cumulatives, spread and imbalance are derived from real levels
+ok 13 - hyperliquid: orderbook cumulatives, spread and imbalance are derived from real levels
+  ---
+  duration_ms: 0.414766
+  type: 'test'
+  ...
+# Subtest: hyperliquid: trades and candles are sorted, filtered and side-normalized
+ok 14 - hyperliquid: trades and candles are sorted, filtered and side-normalized
+  ---
+  duration_ms: 0.30438
+  type: 'test'
+  ...
+# Subtest: hyperliquid: info client surfaces HTTP and malformed responses without leaking secrets
+ok 15 - hyperliquid: info client surfaces HTTP and malformed responses without leaking secrets
+  ---
+  duration_ms: 21.867375
+  type: 'test'
+  ...
+# Subtest: hyperliquid: official icon URLs are derived from live symbols, not a hardcoded logo map
+ok 16 - hyperliquid: official icon URLs are derived from live symbols, not a hardcoded logo map
+  ---
+  duration_ms: 0.307142
+  type: 'test'
+  ...
+# Subtest: hyperliquid: context batches include native and HIP-3 DEXs without dropping the official coin id
+ok 17 - hyperliquid: context batches include native and HIP-3 DEXs without dropping the official coin id
+  ---
+  duration_ms: 0.300535
+  type: 'test'
+  ...
+# Subtest: paper: mark-price fills reserve collateral and close once with long/short PnL
+ok 18 - paper: mark-price fills reserve collateral and close once with long/short PnL
+  ---
+  duration_ms: 0.288415
+  type: 'test'
+  ...
+# Subtest: paper: rejects invalid prices, overspend, leverage and leveraged/short spot
+ok 19 - paper: rejects invalid prices, overspend, leverage and leveraged/short spot
+  ---
+  duration_ms: 0.489614
+  type: 'test'
+  ...
+# Subtest: paper: persisted local account is validated before hydration
+ok 20 - paper: persisted local account is validated before hydration
+  ---
+  duration_ms: 0.152325
+  type: 'test'
+  ...
+# Subtest: hyperliquid: perpetual loader uses contexts per discovered DEX, never allPerpMetas as prices
+ok 21 - hyperliquid: perpetual loader uses contexts per discovered DEX, never allPerpMetas as prices
+  ---
+  duration_ms: 1.826889
+  type: 'test'
+  ...
+# Subtest: hyperliquid: spot context identity wins over array position
+ok 22 - hyperliquid: spot context identity wins over array position
+  ---
+  duration_ms: 0.24657
+  type: 'test'
+  ...
+# Subtest: hyperliquid: spot icon namespace and metadata-gated Unit fallback, no per-token alias table
+ok 23 - hyperliquid: spot icon namespace and metadata-gated Unit fallback, no per-token alias table
+  ---
+  duration_ms: 0.537329
+  type: 'test'
+  ...
+1..23
+# tests 23
+# suites 0
+# pass 23
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 602.118824
+
+> build
+> node scripts/build.mjs
+
+▲ Next.js 16.4.3 (Turbopack)
+✓ Running next.config.ts took 132ms
+- Experiments (use with caution):
+  · staleTimes
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 1295ms
+  Running TypeScript ...
+  Finished TypeScript in 5.6s ...
+  Collecting page data using 1 worker ...
+  Generating static pages using 1 worker (0/2) ...
+✓ Generating static pages using 1 worker (2/2) in 86ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ƒ /
+├ ƒ /_not-found
+├ ƒ /about
+├ ƒ /api/account
+├ ƒ /api/auth/[action]
+├ ƒ /api/faucet
+├ ƒ /api/health
+├ ƒ /api/launches
+├ ƒ /api/launches/[slug]
+├ ƒ /api/launches/[slug]/action
+├ ƒ /api/network
+├ ƒ /api/notifications
+├ ƒ /api/perp
+├ ƒ /api/perp/[marketId]
+├ ƒ /api/simulation
+├ ƒ /api/stoke
+├ ƒ /api/swap
+├ ƒ /api/x
+├ ƒ /create
+├ ƒ /dashboard
+├ ƒ /docs
+├ ƒ /economics
+├ ƒ /launch
+├ ƒ /stoke
+├ ƒ /token/[slug]
+└ ƒ /trade
+
+
+ƒ  (Dynamic)  server-rendered on demand

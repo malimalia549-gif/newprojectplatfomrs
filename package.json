@@ -1,0 +1,31 @@
+{
+  "name": "elysium-platform-workspace",
+  "private": true,
+  "workspaces": [
+    "platform"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=elysium-unified-platform",
+    "build": "npm run build --workspace=elysium-unified-platform",
+    "start": "npm run start --workspace=elysium-unified-platform",
+    "lint": "npm run lint --workspace=elysium-unified-platform",
+    "typecheck": "npm run typecheck --workspace=elysium-unified-platform",
+    "test": "npm run test --workspace=elysium-unified-platform",
+    "test:e2e": "npm run test:e2e --workspace=elysium-unified-platform",
+    "db:migrate": "npm run db:migrate --workspace=elysium-unified-platform",
+    "test:api": "npm run test:api --workspace=elysium-unified-platform",
+    "check": "npm run check --workspace=elysium-unified-platform",
+    "test:ledger": "npm run test:ledger --workspace=elysium-unified-platform",
+    "start:local": "npm run start:local --workspace=elysium-unified-platform",
+    "preview": "npm run preview --workspace=elysium-unified-platform"
+  },
+  "overrides": {
+    "@esbuild-kit/core-utils": {
+      "esbuild": "0.25.12"
+    },
+    "minimatch": "11.0.3"
+  },
+  "engines": {
+    "node": ">=22.12"
+  }
+}
