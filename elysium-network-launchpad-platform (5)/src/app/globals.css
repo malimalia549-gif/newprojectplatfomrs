@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink-950: #10231b;
+  --color-ink-900: #f4f6f1;
+  --color-ink-800: #e8ede6;
+  --color-ink-700: #dce4d9;
+  --color-ice-400: #126649;
+  --color-ice-500: #0d4934;
+  --color-aurora-400: #795baa;
+  --color-up: #16864e;
+  --color-down: #c64c60;
+  --color-gold: #a57e28;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-serif: "Manrope", "Inter", sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/inter-regular.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  src: url("/fonts/inter-medium.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600 900;
+  src: url("/fonts/inter-semibold.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/manrope-regular.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 500;
+  src: url("/fonts/manrope-medium.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 600;
+  src: url("/fonts/manrope-semibold.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700 900;
+  src: url("/fonts/manrope-extrabold.ttf") format("truetype");
+  font-display: swap;
+}
+
+:root {
+  color-scheme: light;
+  --fg: #17251e;
+  --muted: #65726a;
+  --line: #dfe5dc;
+  --bg: #f8faf6;
+  --green: #176b49;
+  --forest: #123f2f;
+}
+html { background: var(--bg); scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--fg); font-family: "Inter", sans-serif; font-size: 14px; line-height: 1.6; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+::selection { background: #d8ead8; color: #103a25; }
+:focus-visible { outline: 2px solid #217b52; outline-offset: 3px; border-radius: 6px; }
+* { scrollbar-width: thin; scrollbar-color: #c9d4c7 transparent; }
+*::-webkit-scrollbar { width: 7px; height: 7px; }
+*::-webkit-scrollbar-thumb { background: #c9d4c7; border-radius: 99px; }
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+input[type="number"] { -moz-appearance: textfield; }
+input[type="range"] { accent-color: #277b4c; }
+.tabular { font-variant-numeric: tabular-nums; }
+.surface { background: #fff; border: 1px solid #e0e5dc; box-shadow: 0 1px 2px rgba(26, 51, 28, 0.02); }
+.font-serif-display { font-family: "Manrope", sans-serif; font-weight: 700; letter-spacing: -0.045em; }
+.hero-glow { background: none; }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+.spin { animation: spin 0.8s linear infinite; }
+@keyframes pulse-dot { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+.live-dot { animation: pulse-dot 1.8s ease-in-out infinite; }
+@keyframes shimmer { 100% { transform: translateX(100%); } }
+.skeleton { position: relative; overflow: hidden; background: #edf1e9; border-radius: 6px; }
+.skeleton::after { content: ""; position: absolute; inset: 0; transform: translateX(-100%); background: linear-gradient(90deg, transparent, #ffffffb3, transparent); animation: shimmer 1.4s infinite; }
+@keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.rise { animation: rise 0.32s cubic-bezier(.22,1,.36,1) both; }
+@keyframes flash-up { from { background: #ddf3df; } to { background: transparent; } }
+@keyframes flash-down { from { background: #f8dfdf; } to { background: transparent; } }
+.tick-up { animation: flash-up 0.65s ease-out; }
+.tick-down { animation: flash-down 0.65s ease-out; }
+@media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; } html { scroll-behavior: auto; } }
